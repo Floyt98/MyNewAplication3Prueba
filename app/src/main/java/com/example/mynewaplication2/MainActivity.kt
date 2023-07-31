@@ -9,7 +9,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Device
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.mynewaplication2.ui.theme.MyNewAplication2Theme
 
 class MainActivity : ComponentActivity() {
@@ -22,25 +25,25 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MySuperText("")
                 }
             }
         }
     }
 }
 
+@Preview(name= "1",
+    heightDp = 50,
+    widthDp = 200,
+    showBackground = true,
+    showSystemUi = true,
+    device = Devices.NEXUS_5
+)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun MySuperText(){
+    MySuperText(name = "Abcdefghij")
 }
-
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    MyNewAplication2Theme {
-        Greeting("Android")
-    }
+fun MySuperText(name:String){
+    Text(text = "Soy YoXD y tu? $name")
 }
